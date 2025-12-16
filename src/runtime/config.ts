@@ -296,7 +296,8 @@ export async function loadConfig(configPath: string): Promise<AppConfig> {
         : path.resolve(configDir, rawGithubReposDir)
       : path.join(rawDataDir, "repos");
 
-  const envPort = process.env.PORT ? parseInt(process.env.PORT, 10) : undefined;
+  const envPortRaw = process.env.PORT ? parseInt(process.env.PORT, 10) : undefined;
+  const envPort = envPortRaw !== undefined && Number.isFinite(envPortRaw) ? envPortRaw : undefined;
   const botSection: BotSection = {
     name: typeof bot.name === "string" ? bot.name : "codexbot",
     host: typeof bot.host === "string" ? bot.host : "0.0.0.0",
