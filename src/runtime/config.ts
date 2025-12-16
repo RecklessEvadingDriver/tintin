@@ -296,10 +296,11 @@ export async function loadConfig(configPath: string): Promise<AppConfig> {
         : path.resolve(configDir, rawGithubReposDir)
       : path.join(rawDataDir, "repos");
 
+  const envPort = process.env.PORT ? parseInt(process.env.PORT, 10) : undefined;
   const botSection: BotSection = {
     name: typeof bot.name === "string" ? bot.name : "codexbot",
     host: typeof bot.host === "string" ? bot.host : "0.0.0.0",
-    port: typeof bot.port === "number" ? bot.port : 8787,
+    port: envPort ?? (typeof bot.port === "number" ? bot.port : 8787),
     data_dir: rawDataDir,
     github_repos_dir: githubReposDir,
     log_level: typeof bot.log_level === "string" ? bot.log_level : "info",
