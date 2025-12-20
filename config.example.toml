@@ -47,7 +47,7 @@ name = "Custom path…"
 path = "*"
 
 [telegram]
-token = "<FILL ME TELEGRAM BOT TOKEN>"
+token = "8557265833:AAHrl4Gao3K5-3-BeMUXOGy31H78r2JuHSs"
 # Optional extra bots used only for sending to reduce rate limiting; first token above is still used for updates/webhooks.
 # additional_bot_tokens = ["env:TELEGRAM_TOKEN_2", "env:TELEGRAM_TOKEN_3"]
 mode = "poll" # webhook | poll
