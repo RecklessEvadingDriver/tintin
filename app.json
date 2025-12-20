@@ -1,0 +1,21 @@
+{
+  "name": "tintin",
+  "description": "Tintin - Control Codex and other coding agents via Telegram or Slack",
+  "repository": "https://github.com/fuzzland/tintin",
+  "keywords": ["telegram", "slack", "bot", "codex", "ai"],
+  "env": {
+    "CONFIG_PATH": {
+      "description": "Path to the TOML configuration file",
+      "value": "./config.toml"
+    },
+    "BOT_AUTO_MIGRATE": {
+      "description": "Automatically run database migrations on startup",
+      "value": "1"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
